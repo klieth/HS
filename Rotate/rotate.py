@@ -2,14 +2,16 @@
 import sys
 #I would also suggest using print("string",end='') if you're using python3
 
-#grab the number of lines out of stdin
+#grab the number of lines out of stdin and make it an int so the computer doesn't get angry
 lines = int(input())
 words = list() #create a new list that will contain the words to write
+
 
 
 #get all the words from stdin and force them onto the list
 for i in range(lines):
     words.append(input())
+
 
 
 #  Figure out which word is the longest. This is important because
@@ -20,8 +22,20 @@ for i in range(0,lines):
     if len(words[i]) > max:
         max = len(words[i])
 
+# A cooler way to do this is:
+# max = len(max(words,key=len))
+
+# An even cooler way to do this:
+# g = lambda x: len(max(x,key=len))
+# max = g(words)
+# Or, instead of using the variable max at all, use g(words)
+
+
+
 #  reverse the list so that the words show up in the correct order
 words.reverse()
+
+
 
 
 #  This does the actual writing of the words.
