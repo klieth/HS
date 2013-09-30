@@ -1,0 +1,3 @@
+time = input();
+
+time.split(":");
